@@ -1,6 +1,6 @@
 %define module 	XML-EP
 %define version 0.01
-%define release %mkrel 9
+%define release %mkrel 10
 
 Summary:	%{module} perl module
 Name: 		perl-%{module}
@@ -41,5 +41,3 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/XML/*.pm
 %{perl_vendorlib}/XML/EP/*
 %{_mandir}/*/*
-
-
