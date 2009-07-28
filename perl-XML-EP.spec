@@ -1,27 +1,27 @@
-%define module 	XML-EP
-%define version 0.01
-%define release %mkrel 12
+%define upstream_name 	 XML-EP
+%define upstream_version 0.01
 
-Summary:	%{module} perl module
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License: 	GPL or Artistic
+Name: 		perl-%{upstream_name}
+Version: 	%perl_convert_version %{upstream_version}
+Release: 	%mkrel 1
+
+Summary:	%{upstream_name} perl module
+License: 	GPL+ or Artistic
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{module}-%{version}.tar.bz2
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 Requires:	perl-XML-Parser 
-Requires:       perl-XML-XSLT 
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
-Url:		http://search.cpan.org/dist/%{module}
-Buildarch:	noarch
+Requires:   perl-XML-XSLT 
+Buildarch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-%{module} attempts to follow the Cocoon ideas and principles, 
+%{upstream_name} attempts to follow the Cocoon ideas and principles, 
 but in a Perl environment.
 
 %prep
-%setup -q  -n %{module}-%{version}
+%setup -q  -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
