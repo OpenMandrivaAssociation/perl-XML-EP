@@ -1,15 +1,13 @@
 %define upstream_name 	 XML-EP
-%define upstream_version 0.01
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.01
+Release:	6
 
 Summary:	%{upstream_name} perl module
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/XML-EP
-Source0:	https://cpan.metacpan.org/authors/id/J/JW/JWIED/XML-EP-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/J/JW/JWIED/XML-EP-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ BuildArch:	noarch
 but in a Perl environment.
 
 %prep
-%setup -q  -n %{upstream_name}-%{upstream_version}
+%setup -q  -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -41,9 +39,7 @@ make
 %changelog
 * Tue Jul 28 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.10.0-1mdv2010.0
 + Revision: 401865
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.01-12mdv2009.0
+- rebuild using %0.01 Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.01-12mdv2009.0
 + Revision: 242200
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
