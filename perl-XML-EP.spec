@@ -2,7 +2,7 @@
 %define upstream_version 0.01
 Name:		perl-%{upstream_name}
 Version:	0.01
-Release:	2
+Release:	3
 
 Summary:	%{upstream_name} perl module
 License:	GPL+ or Artistic
@@ -21,7 +21,7 @@ BuildArch:	noarch
 but in a Perl environment.
 
 %prep
-%setup -q  -n XML-EP-0.01
+%setup -q -n XML-EP-0.01
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -29,6 +29,9 @@ make
 
 %install
 %makeinstall_std
+
+%check
+make test || :
 
 %files 
 %doc ChangeLog README MANIFEST examples
